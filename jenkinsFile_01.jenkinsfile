@@ -1,11 +1,14 @@
 pipeline
 {
     agent any
-      stage("GIT REPO CHECK")
+      stages
       {
-          steps
+          stage("GIT REPO CHECK")
           {
-             echo " GIT REPO IS FUNCTIONING"
-          }
+              steps
+              {
+                 echo " GIT REPO IS FUNCTIONING"
+              }
+           }
        }
  }
