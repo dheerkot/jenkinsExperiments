@@ -1,8 +1,11 @@
-pipeline{
-agents any
-stage{
-  steps{
-     echo " GIT REPO IS FUNCTIONING"
-     }
-   }
+pipeline
+{
+    agent any
+      stage("GIT REPO CHECK")
+      {
+          steps
+          {
+             echo " GIT REPO IS FUNCTIONING"
+          }
+       }
  }
