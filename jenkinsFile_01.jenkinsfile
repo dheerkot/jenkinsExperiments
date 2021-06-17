@@ -7,7 +7,8 @@ pipeline
         {
             steps
             {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '42af3c63-36c1-4234-bbce-5cf330ecf797', url: 'https://github.com/dheerkot/jenkinsExperiments.git']]])
+                //checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '42af3c63-36c1-4234-bbce-5cf330ecf797', url: 'https://github.com/dheerkot/jenkinsExperiments.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [[$class: 'CheckoutOption', timeout: 3], [$class: 'ChangelogToBranch', options: [compareRemote: '*/main', compareTarget: '*/main']], [$class: 'AuthorInChangelog']], userRemoteConfigs: [[credentialsId: '42af3c63-36c1-4234-bbce-5cf330ecf797', url: 'https://github.com/dheerkot/jenkinsExperiments.git']]])
                 echo " GIT REPO IS FUNCTIONING"
             }
         }
