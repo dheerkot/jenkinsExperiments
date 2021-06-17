@@ -1,1 +1,15 @@
 //Added new jenkins file
+#!/usr/bin/env groovy
+// -*- coding: utf-8 -*-
+
+pipeline
+{
+    agents any
+
+    stages
+    {
+    steps{
+            echo "Test text"
+         }
+    }
+}
